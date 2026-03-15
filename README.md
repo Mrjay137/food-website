@@ -38,12 +38,10 @@ Visit: **http://localhost:3000**
 
 ```
 food-website/
-├── public/
-│   ├── index.html       ← Main HTML (all sections)
-│   ├── css/
-│   │   └── style.css    ← All styles + animations
-│   └── js/
-│       └── main.js      ← Frontend JavaScript
+
+│── index.html       ← Main HTML (all sections)
+│── style.css    ← All styles + animations
+│── main.js      ← Frontend JavaScript
 ├── data/                ← Auto-created JSON "database"
 │   ├── reservations.json
 │   ├── newsletter.json
