@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌿 Verdura — Farm to Table</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Floating Leaves & Flowers Animation Layer -->
+  <div class="nature-layer" id="natureLayer"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="logo">🌿 Verdura</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="reserve-btn" onclick="openModal('reserveModal')">Reserve Table</button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#home" onclick="closeMobileNav()">Home</a></li>
+      <li><a href="#menu" onclick="closeMobileNav()">Menu</a></li>
+      <li><a href="#about" onclick="closeMobileNav()">About</a></li>
+      <li><a href="#gallery" onclick="closeMobileNav()">Gallery</a></li>
+      <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">🌱 Organic · Seasonal · Local</span>
+      <h1 class="hero-title">
+        Nature's Finest<br/>
+        <em>On Your Plate</em>
+      </h1>
+      <p class="hero-sub">Hand-crafted dishes blooming with the freshest farm ingredients. Every meal is a journey through the garden.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <a href="#about" class="btn-ghost">Our Story</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="120">0</span><span>+</span><small>Dishes</small></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="14">0</span><span>+</span><small>Years</small></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="98">0</span><span>%</span><small>Happy Guests</small></div>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-ring ring1"></div>
+      <div class="hero-ring ring2"></div>
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700&auto=format&fit=crop" alt="Beautiful dish" class="hero-img"/>
+      <div class="hero-bubble bub1">🌿 Fresh Daily</div>
+      <div class="hero-bubble bub2">⭐ 4.9 Rating</div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Features Bar -->
+  <section class="features-bar">
+    <div class="feat"><span class="feat-icon">🌾</span><span>Farm Fresh</span></div>
+    <div class="feat"><span class="feat-icon">🍃</span><span>100% Organic</span></div>
+    <div class="feat"><span class="feat-icon">👨‍🍳</span><span>Master Chefs</span></div>
+    <div class="feat"><span class="feat-icon">🚚</span><span>Fast Delivery</span></div>
+    <div class="feat"><span class="feat-icon">💚</span><span>Zero Waste</span></div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Menu</span>
+        <h2>A Feast of <em>Flavours</em></h2>
+        <p>Seasonal creations that celebrate the bounty of nature. Menus change with the harvest.</p>
+      </div>
+      <div class="menu-tabs">
+        <button class="tab active" data-cat="all">All</button>
+        <button class="tab" data-cat="starters">Starters</button>
+        <button class="tab" data-cat="mains">Mains</button>
+        <button class="tab" data-cat="desserts">Desserts</button>
+        <button class="tab" data-cat="drinks">Drinks</button>
+      </div>
+      <div class="menu-grid" id="menuGrid">
+        <!-- JS Populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-left">
+      <div class="about-imgs">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&auto=format&fit=crop" alt="Chef" class="about-img1"/>
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&auto=format&fit=crop" alt="Food" class="about-img2"/>
+        <div class="about-badge">🏆 Best Restaurant 2023</div>
+      </div>
+    </div>
+    <div class="about-right">
+      <span class="section-tag">Our Story</span>
+      <h2>Born from a <em>Passion</em> for Pure Food</h2>
+      <p>Verdura started as a small kitchen garden in 2009. Our founders believed that the most memorable meals are those made with ingredients grown with love and harvested at their peak.</p>
+      <p>Today, we partner with over 30 local farms and grow 40% of our herbs and microgreens on-site. Every dish tells the story of the land it came from.</p>
+      <div class="about-features">
+        <div class="af-item"><span>🌱</span><div><strong>Garden to Table</strong><small>40% grown on-site</small></div></div>
+        <div class="af-item"><span>🤝</span><div><strong>30+ Farm Partners</strong><small>Local & sustainable</small></div></div>
+        <div class="af-item"><span>♻️</span><div><strong>Zero Waste Kitchen</strong><small>Composting everything</small></div></div>
+      </div>
+      <a href="#menu" class="btn-primary">Discover the Menu</a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-tag">Gallery</span>
+        <h2>Edible <em>Art</em></h2>
+        <p>Every dish plated with intention — a visual feast before the first bite.</p>
+      </div>
+      <div class="gallery-masonry">
+        <div class="gallery-item tall">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&auto=format&fit=crop" alt="Gallery 1"/>
+          <div class="gallery-overlay"><span>Seasonal Bowl</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&auto=format&fit=crop" alt="Gallery 2"/>
+          <div class="gallery-overlay"><span>Garden Tapas</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=500&auto=format&fit=crop" alt="Gallery 3"/>
+          <div class="gallery-overlay"><span>Sunrise Breakfast</span></div>
+        </div>
+        <div class="gallery-item tall">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&auto=format&fit=crop" alt="Gallery 4"/>
+          <div class="gallery-overlay"><span>Verdura Signature</span></div>
+        </div>
+        <div class="gallery-item wide">
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=700&auto=format&fit=crop" alt="Gallery 5"/>
+          <div class="gallery-overlay"><span>Chef's Table</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&auto=format&fit=crop" alt="Gallery 6"/>
+          <div class="gallery-overlay"><span>Harvest Salad</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Testimonials</span>
+        <h2>Loved by <em>Food Lovers</em></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"The most extraordinary dining experience I've ever had. Every ingredient felt alive on the plate. Verdura is pure poetry."</p>
+          <div class="testi-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah"/>
+            <div><strong>Sarah K.</strong><small>Food Blogger</small></div>
+          </div>
+        </div>
+        <div class="testi-card featured">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"I've been coming here for five years. The farm partnerships mean every visit is a completely new experience. Seasonal magic."</p>
+          <div class="testi-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James"/>
+            <div><strong>James M.</strong><small>Regular Guest</small></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Verdura redefined what I think 'healthy food' means. It's indulgent, artistic, and genuinely nourishing all at once."</p>
+          <div class="testi-author">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya"/>
+            <div><strong>Priya S.</strong><small>Wellness Coach</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="nl-content">
+      <span class="nl-icon">🌸</span>
+      <h2>Get Seasonal Menus & <em>Secret Recipes</em></h2>
+      <p>Join 12,000+ food lovers who receive our weekly garden-to-table newsletter.</p>
+      <form class="nl-form" id="nlForm">
+        <input type="email" placeholder="your@email.com" required id="nlEmail"/>
+        <button type="submit">Subscribe 🌿</button>
+      </form>
+      <div class="nl-success" id="nlSuccess">🎉 Welcome to the garden family!</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Visit Us</span>
+        <h2>Find Us in the <em>Garden</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="ci-item"><span>📍</span><div><strong>Address</strong><p>HBColony Laxmiguda, Hyderabad</p></div></div>
+          <div class="ci-item"><span>📞</span><div><strong>Phone</strong><p>+91 9347081204</p></div></div>
+          <div class="ci-item"><span>🕐</span><div><strong>Hours</strong><p>Mon–Sun: 11:00 AM – 11:00 PM</p></div></div>
+          <div class="ci-item"><span>✉️</span><div><strong>Email</strong><p>mrutunjayk137@gmail.com</p></div></div>
+          <div class="social-links">
+            <a href="#" class="social-btn">📸 Instagram</a>
+            <a href="#" class="social-btn">👍 Facebook</a>
+            <a href="#" class="social-btn">🐦 Twitter</a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <h3>Send a Message</h3>
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required id="cfName"/>
+            <input type="email" placeholder="Your Email" required id="cfEmail"/>
+          </div>
+          <input type="text" placeholder="Subject" id="cfSubject"/>
+          <textarea placeholder="Your message..." rows="5" id="cfMessage" required></textarea>
+          <button type="submit" class="btn-primary">Send Message 🌿</button>
+          <div class="form-success" id="formSuccess">✅ Message sent! We'll bloom back soon.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">🌿 Verdura</div>
+        <p>Where every bite tells the story of the earth. Organic, seasonal, and made with boundless love.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Dining</h4>
+        <ul>
+          <li><a href="#">Reservations</a></li>
+          <li><a href="#">Private Events</a></li>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay in the Garden</h4>
+        <p>Weekly seasonal specials to your inbox.</p>
+        <div class="ft-nl"><input type="email" placeholder="Email address"/><button>→</button></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Verdura. Crafted with 💚 and organic ingredients.</p>
+    </div>
+  </footer>
+
+  <!-- Reserve Modal -->
+  <div class="modal-overlay" id="reserveModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('reserveModal')">✕</button>
+      <h2>Reserve Your Table 🌿</h2>
+      <p>Book a table at Verdura. We'll confirm within 2 hours.</p>
+      <form id="reserveForm">
+        <div class="form-row">
+          <input type="text" placeholder="Full Name" required/>
+          <input type="tel" placeholder="Phone Number" required/>
+        </div>
+        <div class="form-row">
+          <input type="date" required/>
+          <input type="time" required/>
+        </div>
+        <div class="form-row">
+          <select aria-label="Number of Guests">
+            <option>2 Guests</option>
+            <option>4 Guests</option>
+            <option>6 Guests</option>
+            <option>8+ Guests</option>
+          </select>
+          <select aria-label="Seating Preference">
+            <option>Indoor Seating</option>
+            <option>Garden Terrace</option>
+            <option>Private Room</option>
+          </select>
+        </div>
+        <textarea placeholder="Special requests or dietary needs..." rows="3"></textarea>
+        <button type="submit" class="btn-primary" style="width:100%">Confirm Reservation 🌸</button>
+        <div class="form-success" id="reserveSuccess" style="display:none">🎉 Reservation confirmed! See you soon!</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Toast -->
+  <div class="cart-toast" id="cartToast">
+    <span id="cartToastText">🛒 Added to cart!</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
